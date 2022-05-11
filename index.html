@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="input_information">
+                <div id="player_status">
+                    <!-- 체력, 공격력, 방어력, 연참, 날카로움, 집중-->
+                    <p id="HP">체력: <input onclick="status(player.HP)";></p>
+                    <p id="AtP">공격력: <input onclick="status(player.AtP)";></p>
+                    <p id="DP">방어력: <input onclick="status(player.DP)";></p>
+                    <p id="AdmgY">연참: <input onclick="status(player.AdmgY)";></p>
+                    <p id="AdmgN">날카로움: <input onclick="status(player.AdmgN)";></p>
+                    <p id="AdmgOnce">집중: <input onclick="status(player.AdmgOnce)";></p>
+                    <!-- 강화, 상급강화, 역겨움, 광폭화, 갑옷-->
+                    <button id="enforcing" onclick="status(player.enforcing);">강화</button>
+                    <button id="ad_enforcing" onclick="status(player.ad_enforcing);">상급 강화</button>
+                    <button id="disgust" onclick="status(player.disgust);">역겨움</button>
+                    <button id="berserk" onclick="status(player.berserk);">광폭화</button>
+                    <button id="armored" onclick="status(player.armor);">갑옷</button>
+                
+                    <div class="location">
+                        <li>플레이어 위치: </li>
+                        <li onclick="location('player', 'forward');">전방</li>
+                        <li onclick="location('player', 'center');">중앙</li>
+                        <li onclick="location('player', 'rear');">후열</li>
+                    </div>
+                    <button class="confirm">확인</button>
+                </div>
+                <div id="target_status">
+                    <p id="Hp"> <input id="" onclick="status(target.);"></p>
+                    <p id="shield"> <input id="" onclick="status(target.);"></p>
+                    <p id="Armor"> <input id="" onclick="status(target.);"></p>
+                    <p id="wounded"> <input id="" onclick="status(target.);"></p>
+                    <button id="defenseless" onclick="status(target.);"></button>
+                    <button id="berserk" onclick="status(target.);"></button>
+                    <div class="location">
+                        <li>타겟 위치: </li>
+                        <li onclick="location('target', 'forward');">전방</li>
+                        <li onclick="location('target', 'center');">중앙</li>
+                        <li onclick="location('target', 'rear');">후열</li>
+                    </div>
+                </div>
+                <div id="relic_list"></div>
+                <div id="item_list"></div>
+            </div>
+            <div id="simulator">
+                <div id="relic_display"></div>
+                <div id="inventory"></div>
+                <div id="battlefield"></div>
+                <div id="skills"></div>
+            </div>
+        </div>
+    </body>
+</html>

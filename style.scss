@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+@mixin width-height($width, $height){
+    width: $width;
+    height: $height;
+}
+
+@mixin flex-display($aligning){
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: $aligning;
+    align-content: $aligning;
+}
+
+body{
+    @include width-height(100%, 57rem);
+}
+
+#wrap {
+    @include width-height(100%, 100%);
+    @include flex-display(center);
+
+    div:not(:first-child){
+        display: none;
+    }
+
+    div:first-child {// == #input_information
+        @include width-height(100%, 50%);
+        @include flex-display(space-evenly);
+
+        div:first-child{ // == #player_status
+
+            p{
+                margin: 0 0.5%;
+                @include width-height(calc(15%), 20%);
+
+                input{
+                    @include width-height(100%, 40%)
+                }
+            }
+
+            button{
+                margin: 0 1%;
+                @include width-height(18%, 15%);
+            }
+
+            div{
+                @include width-height(100%, 20%);
+                @include flex-display(space-evenly);
+
+                li{
+                    @include width-height(20%, 80%);
+                    line-height: 2rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+}
