@@ -33,7 +33,8 @@ a {
 }
 
 input {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -44,4 +45,5 @@ input {
 
 abbr {
   text-decoration: none;
-}/*# sourceMappingURL=reset.css.map */
+}
+/*# sourceMappingURL=reset.css.map */

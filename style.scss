@@ -24,15 +24,22 @@ body{
         display: none;
     }
 
-    div:first-child {// == #input_information
-        @include width-height(100%, 50%);
+    div {// == #input_information
+        @include width-height(100%, 60%);
         @include flex-display(space-evenly);
 
-        div:first-child{ // == #player_status
+        div{ // == #player_status
+
+            h2{
+                @include width-height(100%, 20%);
+                text-align: center;
+                font-size: 2rem;
+                line-height: 3rem;
+            }
 
             p{
                 margin: 0 0.5%;
-                @include width-height(calc(15%), 20%);
+                @include width-height(calc(15%), 15%);
 
                 input{
                     @include width-height(100%, 40%)
@@ -40,12 +47,12 @@ body{
             }
 
             button{
-                margin: 0 1%;
-                @include width-height(18%, 15%);
+                margin: 0 30%;
+                @include width-height(18%, 10%);
             }
 
             div{
-                @include width-height(100%, 20%);
+                @include width-height(100%, 15%);
                 @include flex-display(space-evenly);
 
                 li{
