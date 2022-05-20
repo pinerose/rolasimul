@@ -34,6 +34,7 @@
                     <button class="confirm" onclick="pages('target_status')">확인</button>
                 </div>
                 <div id="target_status">
+                    <h2>target's status</h2>
                     <p class="target HP">체력: <input id="" onchange="status('target', 'HP');"></p>
                     <p class="target shield">방어도: <input id="" onchange="status('target', 'shield');"></p>
                     <p class="target Armor">철갑: <input id="" onchange="status('target', 'Armor');"></p>
@@ -46,14 +47,58 @@
                         <li onclick="locate('target', 1);">중앙</li>
                         <li onclick="locate('target', 2);">후열</li>
                     </div>
+                    <button class="confirm" onclick="pages('relic_list');">확인</button>
                 </div>
-                <div id="relic_list"></div>
-                <div id="item_list"></div>
+                <div id="relic_list">
+                    <h2>유물 리스트</h2>
+                    <div id="class_relic"> <!--추후 추가예정-->
+                        <!-- warrior class -->
+                        <img src="img/relic/class/warrior.png" onclick="relic('warrior')">
+                        <img src="img/relic/class/knight.png" onclick="relic('knight')">
+                        <img src="img/relic/class/lancer.png" onclick="relic('lancer')">
+                        <img src="img/relic/class/paladin.png" onclick="relic('paladin')">
+                        <img src="img/relic/class/arcknight.png" onclick="relic('arcknight')">
+                        <img src="img/relic/class/berserker.png" onclick="relic('berserker')">
+                        <img src="img/relic/class/reaper.png" onclick="relic('reaper')">
+                        <!-- mage class -->
+                        <img src="img/relic/class/mage.png" onclick="relic('mage')">
+                        <img src="img/relic/class/sorcerer.png" onclick="relic('sorcerer')">
+                        <img src="img/relic/class/magister.png" onclick="relic('magister')">
+                        <img src="img/relic/class/arcmage.png" onclick="relic('arcmage')">
+                        <img src="img/relic/class/druid.png" onclick="relic('druid')">
+                        <img src="img/relic/class/warlock.png" onclick="relic('warlock')">
+                        <img src="img/relic/class/summoner.png" onclick="relic('summoner')">
+                    </div>
+                    <div id="common_relic"></div>
+                    <div id="abnormal_relic"></div>
+                    <div id="rare_relic"></div>
+                    <div id="unique_relic"></div>
+                    <div id="other_relic"></div>
+                    <button class="confirm" onclick="pages('item_list')">확인</button>
+                </div>
+                <div id="item_list">
+                    <h2>소지품 리스트</h2>
+                    <button class="confirm" onclick="pages('simulator')">확인</button>
+                </div>
             </div>
             <div id="simulator">
-                <div id="relic_display"></div>
+                <h2>로라라라 시뮬레이터</h2>
+                <div id="relic_display">
+                    <!-- 코드로 생성 -->
+                </div>
                 <div id="inventory"></div>
-                <div id="battlefield"></div>
+                <div id="battlefield">
+                    <div id="playerCamp">
+                        <li class="player_rear"></li>
+                        <li class="player_center">player</li>
+                        <li class="player_forward"></li>
+                    </div>
+                    <div id="enemyCamp">
+                        <li class="target_forward"></li>
+                        <li class="target_center"></li>
+                        <li class="target_rear"></li>
+                    </div>
+                </div>
                 <div id="skills"></div>
             </div>
         </div>

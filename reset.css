@@ -11,6 +11,7 @@ menu, nav, section, summary, time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  border-collapse: collapse;
   display: inline-block;
 }
 

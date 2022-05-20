@@ -20,11 +20,11 @@ body {
       align-content: center;
 }
 
-#wrap div:not(:first-child) {
+#wrap div:not(#input_information) {
   display: none;
 }
 
-#wrap div {
+#wrap #input_information {
   width: 100%;
   height: 60%;
   display: -webkit-box;
@@ -41,7 +41,24 @@ body {
       align-content: space-evenly;
 }
 
-#wrap div div h2 {
+#wrap #input_information div {
+  width: 100%;
+  height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+}
+
+#wrap #input_information div h2 {
   width: 100%;
   height: 20%;
   text-align: center;
@@ -49,24 +66,24 @@ body {
   line-height: 3rem;
 }
 
-#wrap div div p {
+#wrap #input_information div p {
   margin: 0 0.5%;
   width: calc(15%);
   height: 15%;
 }
 
-#wrap div div p input {
+#wrap #input_information div p input {
   width: 100%;
   height: 40%;
 }
 
-#wrap div div button {
+#wrap #input_information div button {
   margin: 0 30%;
   width: 18%;
   height: 10%;
 }
 
-#wrap div div div {
+#wrap #input_information div div {
   width: 100%;
   height: 15%;
   display: -webkit-box;
@@ -83,10 +100,89 @@ body {
       align-content: space-evenly;
 }
 
-#wrap div div div li {
+#wrap #input_information div div li {
   width: 20%;
   height: 80%;
   line-height: 2rem;
   text-align: center;
+}
+
+#wrap #input_information div:not(:first-child) {
+  display: none;
+}
+
+#wrap #simulator {
+  width: 100%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#wrap #simulator h2 {
+  width: 100%;
+  height: 7%;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+
+#wrap #simulator #relic_display {
+  width: 100%;
+  height: 10%;
+  border-radius: 1rem;
+  border: 1px solid gray;
+}
+
+#wrap #simulator #inventory {
+  width: 9%;
+  height: 42%;
+  border-radius: 1rem;
+  border: 1px solid gray;
+  background: #8B4513;
+}
+
+#wrap #simulator #battlefield {
+  width: 90%;
+  height: 42%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+}
+
+#wrap #simulator #skills {
+  width: 100%;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+  border: 1px solid gray;
 }
 /*# sourceMappingURL=style.css.map */

@@ -20,15 +20,17 @@ body{
     @include width-height(100%, 100%);
     @include flex-display(center);
 
-    div:not(:first-child){
+    div:not(#input_information){
         display: none;
     }
 
-    div {// == #input_information
+    #input_information {// == #input_information
         @include width-height(100%, 60%);
         @include flex-display(space-evenly);
 
         div{ // == #player_status
+            @include width-height(100%, 60%);
+            @include flex-display(space-evenly);
 
             h2{
                 @include width-height(100%, 20%);
@@ -61,6 +63,46 @@ body{
                     text-align: center;
                 }
             }
+        }
+
+        div:not(:first-child){
+            display: none;
+        }
+    }
+
+    #simulator{
+        @include width-height(100%, 80%);
+        @include flex-display(center);
+
+        h2{
+            @include width-height(100%, 7%);
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 3rem;
+        }
+
+        #relic_display{
+            @include width-height(100%, 10%);
+            border-radius: 1rem;
+            border: 1px solid gray;
+        }
+
+        #inventory{
+            @include width-height(9%, 42%);
+            border-radius: 1rem;
+            border: 1px solid gray;
+            background: #8B4513;
+        }
+
+        #battlefield{
+            @include width-height(90%, 42%);
+            @include flex-display(space-evenly);
+        }
+
+        #skills{
+            @include width-height(100%, 40%);
+            @include flex-display(space-evenly);
+            border: 1px solid gray;
         }
     }
 

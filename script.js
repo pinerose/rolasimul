@@ -26,14 +26,17 @@ let target = {
     location: 1 // 전열 0, 중열 1, 후열 2
 }
 
+let selector = new Function('input', 'return document.querySelector(input)');
+let selectorAll = new Function('input', 'return document.querySelectorAll(input)')
+
 function status(kinds, effects){
     switch (kinds){
         case 'player':
-            player[effects] = parseInt(document.querySelector(`.${kinds}.${effects} input`).value);
-            console.log(parseInt(document.querySelector(`.${kinds}.${effects} input`).value));
+            player[effects] = parseInt(selector(`.${kinds}.${effects} input`).value);
+            console.log(parseInt(selector(`.${kinds}.${effects} input`).value));
             break;
         case 'target':
-            target[effects] = document.querySelector(`.${kinds}.${effects} input`).value;
+            target[effects] = selector(`.${kinds}.${effects} input`).value;
             break;
     }
 }
@@ -51,8 +54,14 @@ function locate(kinds, address){
 }
 
 function pages(idName){
+    if (idName == 'simulator'){
+        for (let x of selectorAll(`#${idName} div`)){
+            x.style.display = 'flex';
+        }
+        selector('#input_information').style.display = 'none';
+    }
     document.getElementById(idName).style.display = 'flex';
-    for (let x of document.querySelectorAll(`#input_information div:not(#${idName})`)){
+    for (let x of selectorAll(`#input_information div:not(#${idName})`)){
         x.style.display = 'none';
     }
 }
