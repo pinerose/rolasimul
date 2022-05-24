@@ -43,7 +43,7 @@ body {
 
 #wrap #input_information div {
   width: 100%;
-  height: 60%;
+  height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,7 +85,7 @@ body {
 
 #wrap #input_information div div {
   width: 100%;
-  height: 15%;
+  height: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,6 +105,54 @@ body {
   height: 80%;
   line-height: 2rem;
   text-align: center;
+}
+
+#wrap #input_information #relic_navigator {
+  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+}
+
+#wrap #input_information #relic_navigator li {
+  width: 15%;
+  height: 60%;
+  text-align: center;
+}
+
+#wrap #input_information #relic_list div, #wrap #input_information #item_list div {
+  overflow: scroll;
+  width: 100%;
+  height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+#wrap #input_information #relic_list div img, #wrap #input_information #item_list div img {
+  width: 18%;
+  height: 60%;
 }
 
 #wrap #input_information div:not(:first-child) {

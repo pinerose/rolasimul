@@ -26,6 +26,8 @@ let target = {
     location: 1 // 전열 0, 중열 1, 후열 2
 }
 
+let relic = {};
+
 let selector = new Function('input', 'return document.querySelector(input)');
 let selectorAll = new Function('input', 'return document.querySelectorAll(input)')
 
@@ -63,5 +65,49 @@ function pages(idName){
     document.getElementById(idName).style.display = 'flex';
     for (let x of selectorAll(`#input_information div:not(#${idName})`)){
         x.style.display = 'none';
+    }
+
+}
+
+function relic_kind(kind){
+    selector(`#${kind}_relic`).style.display = 'flex';
+    for (let x of selectorAll(`#relic_list div:not(#${kind}_relic)`)) {
+        x.style.display = 'none';
+    }
+}
+
+function choose_relic(input){
+    switch (input){
+        case 'paladin' || 'arcknight':
+            relic['zeroth'] = 'warrior';
+            relic['first'] = 'knight';
+            relic['second'] = input;
+            break;
+        case 'berserker' || 'reaper':
+            relic['zeroth'] = 'warrior';
+            relic['first'] = 'lancer';
+            relic['second'] = input;
+            break;
+        case 'arcmage' || 'druid':
+            relic['zeroth'] = 'mage';
+            relic['first'] = 'sorcerer';
+            relic['second'] = input;
+            break;
+        case 'warlock' || 'summoner':
+            relic['zeroth'] = 'mage';
+            relic['first'] = 'magister';
+            relic['second'] = input;
+            break;
+        case 'knight' || 'lancer':
+            relic['zeroth'] = 'warrior';
+            relic['first'] = input;
+            break;
+        case 'sorcerer' || 'magister':
+            relic['zeroth'] = 'mage';
+            relic['first'] = input;
+            break;
+        case 'warrior' || 'mage':
+            relic['zeroth'] = input;
+            break;
     }
 }

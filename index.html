@@ -51,23 +51,31 @@
                 </div>
                 <div id="relic_list">
                     <h2>유물 리스트</h2>
+                    <nav id="relic_navigator">
+                        <li onclick="relic_kind('class');">직업</li>
+                        <li onclick="relic_kind('common');">일반</li>
+                        <li onclick="relic_kind('abnormal');">희귀</li>
+                        <li onclick="relic_kind('rare');">레어</li>
+                        <li onclick="relic_kind('unique');">유니크</li>
+                        <li onclick="relic_kind('other');">기타</li>
+                    </nav>
                     <div id="class_relic"> <!--추후 추가예정-->
                         <!-- warrior class -->
-                        <img src="img/relic/class/warrior.png" onclick="relic('warrior')">
-                        <img src="img/relic/class/knight.png" onclick="relic('knight')">
-                        <img src="img/relic/class/lancer.png" onclick="relic('lancer')">
-                        <img src="img/relic/class/paladin.png" onclick="relic('paladin')">
-                        <img src="img/relic/class/arcknight.png" onclick="relic('arcknight')">
-                        <img src="img/relic/class/berserker.png" onclick="relic('berserker')">
-                        <img src="img/relic/class/reaper.png" onclick="relic('reaper')">
+                        <img src="img/relic/class/warrior.png" onclick="choose_relic('warrior')">
+                        <img src="img/relic/class/knight.png" onclick="choose_relic('knight')">
+                        <img src="img/relic/class/lancer.png" onclick="choose_relic('lancer')">
+                        <img src="img/relic/class/paladin.png" onclick="choose_relic('paladin')">
+                        <img src="img/relic/class/arcknight.png" onclick="choose_relic('arcknight')">
+                        <img src="img/relic/class/berserker.png" onclick="choose_relic('berserker')">
+                        <img src="img/relic/class/reaper.png" onclick="choose_relic('reaper')">
                         <!-- mage class -->
-                        <img src="img/relic/class/mage.png" onclick="relic('mage')">
-                        <img src="img/relic/class/sorcerer.png" onclick="relic('sorcerer')">
-                        <img src="img/relic/class/magister.png" onclick="relic('magister')">
-                        <img src="img/relic/class/arcmage.png" onclick="relic('arcmage')">
-                        <img src="img/relic/class/druid.png" onclick="relic('druid')">
-                        <img src="img/relic/class/warlock.png" onclick="relic('warlock')">
-                        <img src="img/relic/class/summoner.png" onclick="relic('summoner')">
+                        <img src="img/relic/class/mage.png" onclick="choose_relic('mage')">
+                        <img src="img/relic/class/sorcerer.png" onclick="choose_relic('sorcerer')">
+                        <img src="img/relic/class/magister.png" onclick="choose_relic('magister')">
+                        <img src="img/relic/class/arcmage.png" onclick="choose_relic('arcmage')">
+                        <img src="img/relic/class/druid.png" onclick="choose_relic('druid')">
+                        <img src="img/relic/class/warlock.png" onclick="choose_relic('warlock')">
+                        <img src="img/relic/class/summoner.png" onclick="choose_relic('summoner')">
                     </div>
                     <div id="common_relic"></div>
                     <div id="abnormal_relic"></div>
@@ -90,7 +98,7 @@
                 <div id="battlefield">
                     <div id="playerCamp">
                         <li class="player_rear"></li>
-                        <li class="player_center">player</li>
+                        <li class="player_center"></li>
                         <li class="player_forward"></li>
                     </div>
                     <div id="enemyCamp">

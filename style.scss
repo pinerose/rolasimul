@@ -29,7 +29,7 @@ body{
         @include flex-display(space-evenly);
 
         div{ // == #player_status
-            @include width-height(100%, 60%);
+            @include width-height(100%, 70%);
             @include flex-display(space-evenly);
 
             h2{
@@ -54,13 +54,37 @@ body{
             }
 
             div{
-                @include width-height(100%, 15%);
+                @include width-height(100%, 10%);
                 @include flex-display(space-evenly);
 
                 li{
                     @include width-height(20%, 80%);
                     line-height: 2rem;
                     text-align: center;
+                }
+            }
+            
+        }
+
+        #relic_navigator{
+            @include width-height(100%, 20%);
+            @include flex-display(space-evenly);
+
+            li{
+                @include width-height(15%, 60%);
+                text-align: center;
+            }
+        }
+        
+        #relic_list, #item_list{
+            div{
+                overflow: scroll;
+                @include width-height(100%, 60%);
+                @include flex-display(space-evenly);
+                align-content: space-between;
+
+                img{
+                    @include width-height(18%, 60%);
                 }
             }
         }
