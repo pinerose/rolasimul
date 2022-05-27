@@ -106,20 +106,25 @@ body{
         }
 
         #relic_display{
-            @include width-height(100%, 10%);
-            border-radius: 1rem;
+            @include width-height(100%, 15%);
+            @include flex-display(space-between);
             border: 1px solid gray;
+
+            img{
+                @include width-height(6%, 42%);
+                margin: 0.5%;
+            }
         }
 
         #inventory{
-            @include width-height(9%, 42%);
+            @include width-height(9%, 37%);
             border-radius: 1rem;
             border: 1px solid gray;
             background: #8B4513;
         }
 
         #battlefield{
-            @include width-height(90%, 42%);
+            @include width-height(90%, 37%);
             @include flex-display(space-evenly);
         }
 

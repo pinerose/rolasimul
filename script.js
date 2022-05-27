@@ -8,7 +8,7 @@ let player = {
     AdmgT: 0,
     AdmgO: 0,
     enforcing: 0,
-    ad_enforcing: 0,
+    adEnforcing: 0,
     disgust: 0,
     berserk: 0,
     armored: 0,
@@ -28,22 +28,23 @@ let target = {
 
 let relic = {};
 
-let selector = new Function('input', 'return document.querySelector(input)');
-let selectorAll = new Function('input', 'return document.querySelectorAll(input)')
+const SELECTOR = input => document.querySelector(input)
+const SELECTOR_All = input => document.querySelectorAll(input)
 
-function status(kinds, effects){
+const STATUS = (kinds, effects) => {
     switch (kinds){
         case 'player':
-            player[effects] = parseInt(selector(`.${kinds}.${effects} input`).value);
-            console.log(parseInt(selector(`.${kinds}.${effects} input`).value));
+            // if ((SELECTOR(`.${kinds}.${effects} input`).value == ''))
+            player[effects] = parseInt(SELECTOR(`.${kinds}.${effects} input`).value);
+            console.log(parseInt(SELECTOR(`.${kinds}.${effects} input`).value));
             break;
         case 'target':
-            target[effects] = selector(`.${kinds}.${effects} input`).value;
+            target[effects] = SELECTOR(`.${kinds}.${effects} input`).value;
             break;
     }
 }
 
-function locate(kinds, address){
+const LOCATE = (kinds, address) => {
     switch (kinds){
         case 'player':
             player['location'] = parseInt(address);
@@ -55,59 +56,38 @@ function locate(kinds, address){
     }
 }
 
-function pages(idName){
+const LOAD_SIMULATOR = () => {
+
+    // 시뮬레이터 보여주기
+    for (let x of SELECTOR_All(`#simulator div`)){
+        x.style.display = 'flex';
+    }
+    SELECTOR('#input_information').style.display = 'none';
+    SELECTOR('#simulator').style.display = 'flex';
+    
+    // 유물 집어넣기
+    let relicList = SELECTOR(`#relic_display`);
+    if (relic.class != undefined){
+        relicList.insertAdjacentHTML('afterbegin', `<img src="img/relic/class/${relic.class}.png">`)
+    }
+}
+
+const PAGES = idName => {
     if (idName == 'simulator'){
-        for (let x of selectorAll(`#${idName} div`)){
-            x.style.display = 'flex';
-        }
-        selector('#input_information').style.display = 'none';
+        LOAD_SIMULATOR();
     }
-    document.getElementById(idName).style.display = 'flex';
-    for (let x of selectorAll(`#input_information div:not(#${idName})`)){
+    SELECTOR(`#${idName}`).style.display = 'flex';
+    for (let x of SELECTOR_All(`#input_information div:not(#${idName})`)){
         x.style.display = 'none';
     }
 
 }
 
-function relic_kind(kind){
-    selector(`#${kind}_relic`).style.display = 'flex';
-    for (let x of selectorAll(`#relic_list div:not(#${kind}_relic)`)) {
+const RELIC_KIND = kind => {
+    SELECTOR(`#${kind}_relic`).style.display = 'flex';
+    for (let x of SELECTOR_All(`#relic_list div:not(#${kind}_relic)`)) {
         x.style.display = 'none';
     }
 }
 
-function choose_relic(input){
-    switch (input){
-        case 'paladin' || 'arcknight':
-            relic['zeroth'] = 'warrior';
-            relic['first'] = 'knight';
-            relic['second'] = input;
-            break;
-        case 'berserker' || 'reaper':
-            relic['zeroth'] = 'warrior';
-            relic['first'] = 'lancer';
-            relic['second'] = input;
-            break;
-        case 'arcmage' || 'druid':
-            relic['zeroth'] = 'mage';
-            relic['first'] = 'sorcerer';
-            relic['second'] = input;
-            break;
-        case 'warlock' || 'summoner':
-            relic['zeroth'] = 'mage';
-            relic['first'] = 'magister';
-            relic['second'] = input;
-            break;
-        case 'knight' || 'lancer':
-            relic['zeroth'] = 'warrior';
-            relic['first'] = input;
-            break;
-        case 'sorcerer' || 'magister':
-            relic['zeroth'] = 'mage';
-            relic['first'] = input;
-            break;
-        case 'warrior' || 'mage':
-            relic['zeroth'] = input;
-            break;
-    }
-}
+const CHOOSE_CLASS = input => relic['class'] = input;

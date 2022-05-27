@@ -12,81 +12,81 @@
                 <div id="player_status">
                     <h2>player's status</h2>
                     <!-- 체력, 공격력, 방어력, 연참, 날카로움, 집중-->
-                    <p class="player HP">체력: <input onchange="status('player', 'HP');"></p>
-                    <p class="player AtP">공격력: <input onchange="status('player', 'AtP');"></p>
-                    <p class="player DP">방어력: <input onchange="status('player', 'DP');"></p>
-                    <p class="player AdmgB">연참: <input onchange="status('player', 'AdmgB');"></p>
-                    <p class="player AdmgT">날카로움: <input onchange="status('player', 'AdmgT');"></p>
-                    <p class="player AdmgO">집중: <input onchange="status('player', 'AdmgO');"></p>
+                    <p class="player HP">체력: <input placeholder="100" onchange="STATUS('player', 'HP');"></p>
+                    <p class="player AtP">공격력: <input placeholder="0" onchange="STATUS('player', 'AtP');"></p>
+                    <p class="player DP">방어력: <input placeholder="0" onchange="STATUS('player', 'DP');"></p>
+                    <p class="player AdmgB">연참: <input placeholder="0" onchange="STATUS('player', 'AdmgB');"></p>
+                    <p class="player AdmgT">날카로움: <input placeholder="0" onchange="STATUS('player', 'AdmgT');"></p>
+                    <p class="player AdmgO">집중: <input placeholder="0" onchange="STATUS('player', 'AdmgO');"></p>
                     <!-- 강화, 상급강화, 역겨움, 광폭화, 갑옷-->
-                    <p class="player enforcing">강화: <input onchange="status('player', 'enforcing');"></p>
-                    <p class="player ad_enforcing">상급강화: <input onchange="status('player', 'ad_enforcing');"></p>
-                    <p class="player disgust">역겨움: <input onchange="status('player', 'disgust');"></p>
-                    <p class="player berserk">광폭화: <input onchange="status('player', 'berserk');"></p>
-                    <p class="player armored">갑옷: <input onchange="status('player', 'armored');"></p>
+                    <p class="player enforcing">강화: <input placeholder="0" onchange="STATUS('player', 'enforcing');"></p>
+                    <p class="player adEnforcing">상급강화: <input placeholder="0" onchange="STATUS('player', 'adEnforcing');"></p>
+                    <p class="player disgust">역겨움: <input placeholder="0" onchange="STATUS('player', 'disgust');"></p>
+                    <p class="player berserk">광폭화: <input placeholder="0" onchange="STATUS('player', 'berserk');"></p>
+                    <p class="player armored">갑옷: <input placeholder="0" onchange="STATUS('player', 'armored');"></p>
                 
                     <div class="location">
                         <li>플레이어 위치: </li>
-                        <li onclick="locate('player', 1);">전방</li>
-                        <li onclick="locate('player', 2);">중앙</li>
-                        <li onclick="locate('player', 3);">후열</li>
+                        <li onclick="LOCATE('player', 1);">전방</li>
+                        <li onclick="LOCATE('player', 2);">중앙</li>
+                        <li onclick="LOCATE('player', 3);">후열</li>
                     </div>
-                    <button class="confirm" onclick="pages('target_status')">확인</button>
+                    <button class="confirm" onclick="PAGES('target_status')">확인</button>
                 </div>
                 <div id="target_status">
                     <h2>target's status</h2>
-                    <p class="target HP">체력: <input id="" onchange="status('target', 'HP');"></p>
-                    <p class="target shield">방어도: <input id="" onchange="status('target', 'shield');"></p>
-                    <p class="target Armor">철갑: <input id="" onchange="status('target', 'Armor');"></p>
-                    <p class="target wounded">상처: <input id="" onchange="status('target', 'wounded');"></p>
-                    <p class="target defenseless">무방비: <input id="" onchange="status('target', 'defenseless');"</p>
-                    <p class="target berserk">광폭화: <input id="" onchange="status('target', 'berserk');"</p>
+                    <p class="target HP">체력: <input placeholder="100" onchange="STATUS('target', 'HP');"></p>
+                    <p class="target shield">방어도: <input placeholder="0" onchange="STATUS('target', 'shield');"></p>
+                    <p class="target Armor">철갑: <input placeholder="0" onchange="STATUS('target', 'Armor');"></p>
+                    <p class="target wounded">상처: <input placeholder="0" onchange="STATUS('target', 'wounded');"></p>
+                    <p class="target defenseless">무방비: <input placeholder="0" onchange="STATUS('target', 'defenseless');"</p>
+                    <p class="target berserk">광폭화: <input placeholder="0" onchange="STATUS('target', 'berserk');"</p>
                     <div class="location">
                         <li>타겟 위치: </li>
-                        <li onclick="locate('target', 0);">전방</li>
-                        <li onclick="locate('target', 1);">중앙</li>
-                        <li onclick="locate('target', 2);">후열</li>
+                        <li onclick="LOCATE('target', 0);">전방</li>
+                        <li onclick="LOCATE('target', 1);">중앙</li>
+                        <li onclick="LOCATE('target', 2);">후열</li>
                     </div>
-                    <button class="confirm" onclick="pages('relic_list');">확인</button>
+                    <button class="confirm" onclick="PAGES('relic_list');">확인</button>
                 </div>
                 <div id="relic_list">
                     <h2>유물 리스트</h2>
                     <nav id="relic_navigator">
-                        <li onclick="relic_kind('class');">직업</li>
-                        <li onclick="relic_kind('common');">일반</li>
-                        <li onclick="relic_kind('abnormal');">희귀</li>
-                        <li onclick="relic_kind('rare');">레어</li>
-                        <li onclick="relic_kind('unique');">유니크</li>
-                        <li onclick="relic_kind('other');">기타</li>
+                        <li onclick="RELIC_KIND('class');">직업</li>
+                        <li onclick="RELIC_KIND('common');">일반</li>
+                        <li onclick="RELIC_KIND('abnormal');">희귀</li>
+                        <li onclick="RELIC_KIND('rare');">레어</li>
+                        <li onclick="RELIC_KIND('unique');">유니크</li>
+                        <li onclick="RELIC_KIND('other');">기타</li>
                     </nav>
                     <div id="class_relic"> <!--추후 추가예정-->
                         <!-- warrior class -->
-                        <img src="img/relic/class/warrior.png" onclick="choose_relic('warrior')">
-                        <img src="img/relic/class/knight.png" onclick="choose_relic('knight')">
-                        <img src="img/relic/class/lancer.png" onclick="choose_relic('lancer')">
-                        <img src="img/relic/class/paladin.png" onclick="choose_relic('paladin')">
-                        <img src="img/relic/class/arcknight.png" onclick="choose_relic('arcknight')">
-                        <img src="img/relic/class/berserker.png" onclick="choose_relic('berserker')">
-                        <img src="img/relic/class/reaper.png" onclick="choose_relic('reaper')">
+                        <img src="img/relic/class/warrior.png" onclick="CHOOSE_CLASS('warrior')">
+                        <img src="img/relic/class/knight.png" onclick="CHOOSE_CLASS('knight')">
+                        <img src="img/relic/class/lancer.png" onclick="CHOOSE_CLASS('lancer')">
+                        <img src="img/relic/class/paladin.png" onclick="CHOOSE_CLASS('paladin')">
+                        <img src="img/relic/class/archknight.png" onclick="CHOOSE_CLASS('archknight')">
+                        <img src="img/relic/class/berserker.png" onclick="CHOOSE_CLASS('berserker')">
+                        <img src="img/relic/class/reaper.png" onclick="CHOOSE_CLASS('reaper')">
                         <!-- mage class -->
-                        <img src="img/relic/class/mage.png" onclick="choose_relic('mage')">
-                        <img src="img/relic/class/sorcerer.png" onclick="choose_relic('sorcerer')">
-                        <img src="img/relic/class/magister.png" onclick="choose_relic('magister')">
-                        <img src="img/relic/class/arcmage.png" onclick="choose_relic('arcmage')">
-                        <img src="img/relic/class/druid.png" onclick="choose_relic('druid')">
-                        <img src="img/relic/class/warlock.png" onclick="choose_relic('warlock')">
-                        <img src="img/relic/class/summoner.png" onclick="choose_relic('summoner')">
+                        <img src="img/relic/class/mage.png" onclick="CHOOSE_CLASS('mage')">
+                        <img src="img/relic/class/sorcerer.png" onclick="CHOOSE_CLASS('sorcerer')">
+                        <img src="img/relic/class/magister.png" onclick="CHOOSE_CLASS('magister')">
+                        <img src="img/relic/class/archmage.png" onclick="CHOOSE_CLASS('archmage')">
+                        <img src="img/relic/class/druid.png" onclick="CHOOSE_CLASS('druid')">
+                        <img src="img/relic/class/warlock.png" onclick="CHOOSE_CLASS('warlock')">
+                        <img src="img/relic/class/summoner.png" onclick="CHOOSE_CLASS('summoner')">
                     </div>
                     <div id="common_relic"></div>
                     <div id="abnormal_relic"></div>
                     <div id="rare_relic"></div>
                     <div id="unique_relic"></div>
                     <div id="other_relic"></div>
-                    <button class="confirm" onclick="pages('item_list')">확인</button>
+                    <button class="confirm" onclick="PAGES('item_list')">확인</button>
                 </div>
                 <div id="item_list">
                     <h2>소지품 리스트</h2>
-                    <button class="confirm" onclick="pages('simulator')">확인</button>
+                    <button class="confirm" onclick="LOAD_SIMULATOR()">확인</button>
                 </div>
             </div>
             <div id="simulator">
